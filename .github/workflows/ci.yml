@@ -4,6 +4,7 @@ on:
   push:
     branches: 
      - main
+     - ah/test_ci
   pull_request:
     branches: [ "main"  ]
 
