@@ -171,6 +171,8 @@ int main(int argc,const char* argv[])
         }
     }
 
+    asm volatile (""::"v"(accud));
+
     std::cout << "Testing information :" << std::endl;
     std::cout << "Operation : " << argv[1] << std::endl;
     std::cout << "Precision : " << argv[2] << std::endl;
