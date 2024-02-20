@@ -38,11 +38,13 @@ jobs:
        run: |
          cd build
          make
+     - name: Machine arch
+       run: |
+         lscpu
      - name: Objdump test
        run: |
          cd build
          objdump -d Test/test_counters/test_counters_executable
-         lscpu
      - name: Testing (Linux)
        run: |
         cd build 

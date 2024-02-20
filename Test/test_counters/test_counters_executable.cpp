@@ -38,6 +38,8 @@ void __attribute__ ((noinline)) test_oth (std::string precision, std::string mod
       if (mode.compare("scalar") == 0) {
           for (auto i = 0; i < nb_loop; ++i) {
               accud = _mm_ceil_sd(accud,b_d);
+              std::cerr << "Log stderr : " <<  _mm_cvtsd_f64 (accud) << std::endl;
+              std::cout << "Log stdout : " <<  _mm_cvtsd_f64 (accud) << std::endl;
           }
       }
       else if (mode.compare("simd") == 0) {
