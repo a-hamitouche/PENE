@@ -171,7 +171,7 @@ int main(int argc,const char* argv[])
         }
     }
 
-    asm volatile (""::"v"(accud));
+  // asm volatile (""::"v"(accud));
 
     std::cout << "Testing information :" << std::endl;
     std::cout << "Operation : " << argv[1] << std::endl;
@@ -179,7 +179,12 @@ int main(int argc,const char* argv[])
     std::cout << "Vectorization : " << argv[3] << std::endl;
     std::cout << "Loop : " << argv[4] << std::endl;
     std::cout << "Test number : " << argv[5] << "  " << argv[6] << std::endl;
-    std::cout << "Result : " << reinterpret_cast<float*>(&accu)[0] << std::endl;
+    if (precision.compare("double") == 0)  {
+      std::cout << "Result : " << reinterpret_cast<double*>(&accud)[0] << std::endl;      
+    }
+    else {
+      std::cout << "Result : " << reinterpret_cast<float*>(&accu)[0] << std::endl;
+    }
   }
   else if (operation.compare("cmp") == 0) {
     auto a = std::stof(argv[5]);
