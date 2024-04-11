@@ -339,6 +339,8 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
+build
+
 Pin
 out
 /code_generator/just_for_cmake.cpp
