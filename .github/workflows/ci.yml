@@ -62,8 +62,10 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=Debug ..
       - name: Build Solution (Windows)
         run: |
+          cd build
           cmake --build .
       - name: Testing (Windows)
         run: |
+          cd build
           ctest -C Debug --output-on-failure
  
