@@ -21,15 +21,37 @@ First clone the repository.
 
 Then, go inside the repository then configure and build the project and finally run the tests.
 
-To do so, run via your command line on Linux or your powershell on Windows:
+## Installation for Linux 
+
+Run via your command line on Linux :
+
+```shell
+cd [PENE repository]
+mkdir build
+cd build 
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make 
+ctest -C Debug --output-on-failure
+``` 
+
+## Installation for Windows
+
+Run via your command line on your powershell on Windows :
 
 ```shell
 cd [PENE repository] 
-cmake . 
+New-Item build -ItemType Directory
+cd build
+
+##runing cmake 
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+
+##build solution
 cmake --build .
-ctest -C Debug
+
+##Testing
+ctest -C Debug --output-on-failure
 ``` 
-On Linux, you can create a folder, then generate and build the project inside it. 
 
 You can also install the tool via a code editor.
 
